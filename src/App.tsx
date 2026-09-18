@@ -199,7 +199,7 @@ function MaterialShowcase() {
             <img
               src={page.img}
               alt={page.label}
-              className="w-full aspect-[480/533] object-cover rounded-md outline-1 -outline-offset-1 outline-ink/10 pointer-events-none drop-shadow-[0_18px_22px_rgba(20,25,31,0.28)]"
+              className="w-full aspect-[3/4] object-contain bg-white rounded-md outline-1 -outline-offset-1 outline-ink/10 pointer-events-none drop-shadow-[0_18px_22px_rgba(20,25,31,0.28)]"
             />
           </button>
         ))}
@@ -1007,7 +1007,11 @@ export default function App() {
       {/* RODAPÉ */}
       <footer className="bg-ink text-onbrand/60 border-t border-onbrand/10">
         <div className="max-w-6xl mx-auto px-5 py-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
-          <img src={logoGondolasMagneticas} alt="Gôndolas Magnéticas" className="h-9 w-auto" />
+          <img
+            src={logoGondolasMagneticas}
+            alt="Gôndolas Magnéticas"
+            className="h-14 sm:h-16 w-auto"
+          />
           <p>© 2026 Gôndola Magnética. Todos os direitos reservados.</p>
         </div>
       </footer>
