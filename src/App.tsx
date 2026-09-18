@@ -402,13 +402,29 @@ function ExitIntentPopup() {
 
 // Dispara InitiateCheckout no Meta Pixel sempre que um link de checkout
 // (Hubla) é clicado — mesmo padrão usado na LP original.
+// Repassa pro checkout (Hubla) todos os parâmetros da URL da LP (utm_*,
+// fbclid, gclid, etc.) — sem isso a venda chega na Hubla "limpa" e o
+// tracking de origem se perde. Reescreve o href do link no clique, antes
+// da navegação, pra funcionar em qualquer link (estático ou renderizado
+// dentro de modal) sem precisar sincronizar múltiplos listeners.
 function useCheckoutTracking() {
   useEffect(() => {
     const onClick = (event: MouseEvent) => {
       const link = (event.target as HTMLElement)?.closest?.(
         'a[href^="https://pay.hub.la/"]',
-      );
-      if (link && typeof (window as any).fbq === "function") {
+      ) as HTMLAnchorElement | null;
+      if (!link) return;
+
+      const currentParams = new URLSearchParams(window.location.search);
+      if ([...currentParams.keys()].length > 0) {
+        const url = new URL(link.href);
+        currentParams.forEach((value, key) => {
+          url.searchParams.set(key, value);
+        });
+        link.href = url.toString();
+      }
+
+      if (typeof (window as any).fbq === "function") {
         (window as any).fbq("track", "InitiateCheckout");
       }
     };
