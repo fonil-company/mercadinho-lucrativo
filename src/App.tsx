@@ -35,7 +35,7 @@ import membrosPasso3Aula from "@/assets/membros-passo3-aula.webp";
 // Checkout direto do +50 Layouts — nenhum CTA do site deve usar âncora (#),
 // todo botão principal leva direto pro Hubla.
 const CHECKOUT_URL = "https://pay.hub.la/me6I5FzSqrnBzr069QC9";
-const EXIT_OFFER_URL = "https://pay.hub.la/XICEkkK9pZoTqvSGVaYP";
+const EXIT_OFFER_URL = "https://pay.hub.la/d3NJkxjsN7WTwRB5sqRF";
 
 function useCountdown() {
   const [secondsLeft, setSecondsLeft] = useState(15 * 60);
@@ -781,7 +781,7 @@ export default function App() {
               </ul>
 
               <a
-                href={CHECKOUT_URL}
+                href="https://pay.hub.la/0hxHS8uGbsIASlRloWH0"
                 className="mt-7 inline-flex items-center justify-center gap-2 bg-onbrand/10 border border-onbrand/25 text-onbrand font-space font-bold uppercase tracking-wide text-sm px-6 py-3.5 rounded-lg hover:bg-onbrand/15 transition"
               >
                 Quero o plano básico
@@ -826,7 +826,7 @@ export default function App() {
               </ul>
 
               <a
-                href="https://pay.hub.la/5nBGiy76VkhzWoNwkeNg"
+                href="https://pay.hub.la/XwLWcsSURH3p0nZiEvqj"
                 className="mt-7 inline-flex items-center justify-center gap-2 bg-brand text-onbrand font-space font-bold uppercase tracking-wide text-sm px-6 py-3.5 rounded-lg shadow-lg shadow-brand/30 hover:brightness-105 transition cta-pulse-green"
               >
                 Quero o plano avançado
@@ -875,28 +875,28 @@ export default function App() {
                 title: "Processos de Layout",
                 desc: "Quem faz, quando faz e como aplicar sozinho ou em equipe.",
                 price: "27,90",
-                href: "https://pay.hub.la/2kraUwM6KuF6jD7yGK1o",
+                href: "https://pay.hub.la/M8TywBbM8IhxR5QbjBDA",
                 img: bookProcessos,
               },
               {
                 title: "Reposição de Supermercado",
                 desc: "Frequência certa, controle de validade e ponto de pedido.",
                 price: "67,90",
-                href: "https://pay.hub.la/LY0a67Juz6DAhRZhZvQU",
+                href: "https://pay.hub.la/nZmlcOcE4WnszLP4S9vP",
                 img: bookReposicao,
               },
               {
                 title: "+300 Tipos de Cross",
                 desc: "Combinações reais de cross-merchandising prontas pra aplicar.",
                 price: "37,90",
-                href: "https://pay.hub.la/F49AmVjrG9bYFsCQQfQB",
+                href: "https://pay.hub.la/lQiwPm0JZJvNRjqoXls8",
                 img: bookCross,
               },
               {
                 title: "Guia de Precificação na Prática",
                 desc: "Planilha + passo a passo pra precificar sem perder margem.",
                 price: "87,90",
-                href: "https://pay.hub.la/0akwfu6MeSql6YpQBorD",
+                href: "https://pay.hub.la/KYupphModAA8WjxK1GJo",
                 img: bookPrecificacao,
               },
             ].map((p) => (
