@@ -23,9 +23,13 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://connect.facebook.net" />
+    <link rel="dns-prefetch" href="https://www.clarity.ms" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;600&family=Space+Grotesk:wght@700;900&display=swap"
+      media="print"
+      onload="this.media='all'"
     />
 
     <!-- Microsoft Clarity -->
@@ -36,11 +40,16 @@
           function () {
             (c[a].q = c[a].q || []).push(arguments);
           };
-        t = l.createElement(r);
-        t.async = 1;
-        t.src = "https://www.clarity.ms/tag/" + i;
-        y = l.getElementsByTagName(r)[0];
-        y.parentNode.insertBefore(t, y);
+        function load() {
+          t = l.createElement(r);
+          t.async = 1;
+          t.src = "https://www.clarity.ms/tag/" + i;
+          y = l.getElementsByTagName(r)[0];
+          y.parentNode.insertBefore(t, y);
+        }
+        // carrega depois do load da página pra não competir com o conteúdo
+        if (l.readyState === "complete") setTimeout(load, 1500);
+        else c.addEventListener("load", function () { setTimeout(load, 1500); });
       })(window, document, "clarity", "script", "ygc38ko54b");
     </script>
 
@@ -56,15 +65,22 @@
         n.loaded = !0;
         n.version = "2.0";
         n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
+        function load() {
+          t = b.createElement(e);
+          t.async = !0;
+          t.src = v;
+          s = b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t, s);
+        }
+        // eventos ficam na fila (fbq.queue) e são enviados quando o script carregar
+        if (b.readyState === "complete") setTimeout(load, 1000);
+        else f.addEventListener("load", function () { setTimeout(load, 1000); });
       })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
       fbq("init", "1365996571906358");
       fbq("track", "PageView");
     </script>
+  </head>
+  <body>
     <noscript>
       <img
         height="1"
@@ -73,8 +89,6 @@
         src="https://www.facebook.com/tr?id=1365996571906358&ev=PageView&noscript=1"
       />
     </noscript>
-  </head>
-  <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

@@ -197,6 +197,8 @@ function MaterialShowcase() {
             className="snap-start shrink-0 w-[72%] sm:w-56 md:w-52 transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98]"
           >
             <img
+              loading="lazy"
+              decoding="async"
               src={page.img}
               alt={page.label}
               className="w-full aspect-[3/4] object-contain bg-white rounded-md outline-1 -outline-offset-1 outline-ink/10 pointer-events-none drop-shadow-[0_18px_22px_rgba(20,25,31,0.28)]"
@@ -224,6 +226,8 @@ function MaterialShowcase() {
             onClick={(e) => e.stopPropagation()}
           >
             <img
+              loading="lazy"
+              decoding="async"
               src={PREVIEW_PAGES[selected].img}
               alt={PREVIEW_PAGES[selected].label}
               className="w-full rounded-md drop-shadow-[0_18px_22px_rgba(20,25,31,0.28)]"
@@ -293,7 +297,7 @@ function VideoCarousel() {
             <video
               controls
               playsInline
-              preload="metadata"
+              preload="none"
               poster={v.poster}
               aria-label={v.label}
               className="w-full aspect-[9/16] rounded-xl object-cover bg-ink outline-1 -outline-offset-1 outline-ink/10"
@@ -533,7 +537,7 @@ export default function App() {
             <video
               controls
               playsInline
-              preload="metadata"
+              preload="none"
               poster={posterVendem3}
               aria-label="Os layouts que fizeram sucesso a nível Brasil"
               className="w-full aspect-video rounded-xl object-cover bg-ink outline-1 -outline-offset-1 outline-ink/10"
@@ -563,6 +567,8 @@ export default function App() {
           <VideoCarousel />
 
           <img
+            loading="lazy"
+            decoding="async"
             src={categoriasCollage}
             alt="Layouts reais aplicados em diferentes categorias do supermercado"
             className="mt-10 w-full rounded-xl outline-1 -outline-offset-1 outline-ink/10"
@@ -653,6 +659,8 @@ export default function App() {
               >
                 <div className="h-[420px] bg-ink overflow-hidden">
                   <img
+                    loading="lazy"
+                    decoding="async"
                     src={step.img}
                     alt={step.t}
                     className={`w-full h-full object-cover ${step.pos}`}
@@ -897,6 +905,8 @@ export default function App() {
                 className="bg-onbrand/[0.07] border border-onbrand/15 rounded-xl p-5 flex flex-col text-center items-center"
               >
                 <img
+                  loading="lazy"
+                  decoding="async"
                   src={p.img}
                   alt={p.title}
                   className="w-44 aspect-[3/2] object-contain drop-shadow-[0_14px_18px_rgba(0,0,0,0.4)]"
@@ -939,11 +949,12 @@ export default function App() {
             ].map((ex) => (
               <figure key={ex.label} className="snap-start shrink-0 w-64">
                 <img
+                  loading="lazy"
+                  decoding="async"
                   src={ex.img}
                   alt={`Exemplo de layout de gôndola aplicado: ${ex.label}`}
                   width={896}
                   height={1152}
-                  loading="lazy"
                   className="w-full aspect-[3/4] object-cover rounded-xl outline-1 -outline-offset-1 outline-ink/5"
                 />
                 <figcaption className="mt-3 font-semibold text-ink">
@@ -988,6 +999,8 @@ export default function App() {
       <section className="bg-ink">
         <div className="max-w-2xl mx-auto px-5 py-16 text-center flex flex-col items-center">
           <img
+            loading="lazy"
+            decoding="async"
             src={seloGarantia30Dias}
             alt="Selo de garantia incondicional de 30 dias"
             className="w-40 h-40 md:w-48 md:h-48 object-contain"
@@ -1008,6 +1021,8 @@ export default function App() {
       <footer className="bg-ink text-onbrand/60 border-t border-onbrand/10">
         <div className="max-w-6xl mx-auto px-5 py-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
           <img
+            loading="lazy"
+            decoding="async"
             src={logoGondolasMagneticas}
             alt="Gôndolas Magnéticas"
             className="h-14 sm:h-16 w-auto"
